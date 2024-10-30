@@ -1,0 +1,167 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bento DCA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #7c1313;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(3, 200px);
+            gap: 20px;
+            width: 90vw;
+            max-width: 1200px;
+            bottom: 2px;
+            position: fixed;
+        }
+
+        .box {
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+        }
+
+        .vid {
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            font-size: 2em;
+            border-radius: 20px;
+        }
+
+        video {
+            width: 50%;
+            height: 500%;
+            border-radius: 20px;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            transition: opacity 0.5s ease; /* Smooth transition */
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .fade-out {
+            opacity: 0; /* Fade-out class */
+        }
+
+        /* Media queries for responsiveness */
+        @media (max-width: 1200px) {
+            .container {
+                grid-template-columns: repeat(6, 1fr);
+                grid-template-rows: repeat(3, 150px);
+            }
+        }
+
+        @media (max-width: 800px) {
+            .container {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+
+            .box {
+                width: 100%;
+                height: auto;
+                font-size: 1.2em;
+                margin-bottom: 10px;
+                padding: 10px;
+            }
+
+            .box:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .box {
+                font-size: 1.2em;
+            }
+
+            .vid {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box box1 vid">
+            <video muted poster="img/pyqimgg.png" class="background-video-ques" id="myvideo1">
+                <source src="VIDEO/questionvid.mp4" type="video/mp4">
+            </video>
+            <div class="content"></div>
+        </div>
+        <div class="box box2 vid">
+            <video muted poster="img/softwaewimg.png" class="background-video-soft" id="myvideo2">
+                <source src="VIDEO/software.mp4" type="video/mp4">
+            </video>
+            <div class="content"></div>
+        </div>
+        <div class="box box3 vid">
+            <video muted poster="img/resultimg.png" class="background-video-result" id="myvideo3">
+                <source src="VIDEO/result.mp4" type="video/mp4">
+            </video>
+            <div class="content"></div>
+        </div>
+        <div class="box box4 vid">
+            <video muted poster="img/LEC.png" class="background-video-yt" id="myvideo4">
+                <source src="VIDEO/bookyt.mp4" type="video/mp4">
+            </video>
+            <div class="content"></div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('video').forEach(video => {
+            video.addEventListener('play', function() {
+                const content = this.nextElementSibling; // Get the content div
+                content.classList.add('fade-out'); // Add fade-out class when video plays
+            });
+
+            video.addEventListener('ended', function() {
+                const content = this.nextElementSibling; // Get the content div
+                content.classList.remove('fade-out'); // Remove class when video ends to reset
+            });
+        });
+        document.querySelectorAll('.vid').forEach(box => {
+    const video = box.querySelector('video');
+    const content = box.querySelector('.content');
+    box.addEventListener('mouseenter', () => {
+        video.play();
+        content.style.opacity = 0; // Fade out content on hover
+    });
+
+    video.addEventListener('ended', () => {
+        video.pause();
+        video.currentTime = 0; // Reset to the beginning
+        content.style.opacity = 1; // Reset opacity when video ends
+    });
+
+});
+    </script>
+</body>
+</html> -->

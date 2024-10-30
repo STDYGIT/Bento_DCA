@@ -9,8 +9,9 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    color: #ff0000;
+    color: #7c1313;
     font-family: Arial, sans-serif;
+
 }
 
 .container {
@@ -20,6 +21,8 @@ body {
     gap: 20px;
     width: 90vw;
     max-width: 1200px;
+    bottom: 2px;
+    position: fixed;
 }
 
 .box {
@@ -30,9 +33,12 @@ body {
     align-items: center;
     font-size: 1.5em;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    
+    cursor: pointer;
+    /* Change cursor on hover */
+
 }
-.vid{
+
+.vid {
     position: relative;
     overflow: hidden;
     display: flex;
@@ -41,9 +47,14 @@ body {
     color: #ffffff;
     font-size: 2em;
     border-radius: 20px;
-     
-}
 
+}
+video {
+    width: 50%;
+    height: 500%;
+    border-radius: 20px;
+    transition: all;
+}
 .background-video {
     position: absolute;
     top: 0;
@@ -53,15 +64,23 @@ body {
     z-index: -1;
     border-radius: 20px;
 }
+
 .content {
     position: relative;
     z-index: 1;
+    transition: opacity 0.5s ease; /* Add transition */
+    transition: opacity 0.5s ease; /* Smooth transition */
+    background: rgba(0, 0, 0, 0.5);
+}
+#myvideo{
+    transition: ease-out 3;
 }
 /* Grid area assignments for a balanced Bento layout */
 .box1 {
     grid-column: span 3;
     grid-row: span 2;
 }
+
 .background-video-ques {
     position: absolute;
     top: 0;
@@ -70,13 +89,15 @@ body {
     height: 100%;
     z-index: -1;
     border-radius: 20px;
-    background-color: #fcd46c;
+    background-color: rgb(252, 212, 108);
 }
+
 .box2 {
     grid-column: span 3;
     grid-row: span 1;
 }
-.background-video-result{
+
+.background-video-result {
     position: absolute;
     top: 0;
     left: 0;
@@ -85,13 +106,15 @@ body {
     z-index: -1;
     border-radius: 20px;
     background-color: black;
-    background-color: #705f7c;
+    background-color: rgb(112, 95, 124);
 }
+
 .box3 {
     grid-column: span 1;
     grid-row: span 1;
 }
-.background-video-soft{
+
+.background-video-soft {
     position: absolute;
     top: 0;
     left: 0;
@@ -106,7 +129,8 @@ body {
     grid-column: span 2;
     grid-row: span 1;
 }
-.background-video-yt{
+
+.background-video-yt {
     position: absolute;
     top: 0;
     left: 0;
@@ -114,10 +138,58 @@ body {
     height: 100%;
     z-index: -1;
     border-radius: 20px;
-    background-color: #e5e6d5
-    ;
+    background-color: rgb(229, 230, 213);
 }
+
 .box5 {
     grid-column: span 2;
     grid-row: span 2;
+}
+
+/* Media queries for responsiveness */
+/* Media queries for responsiveness */
+@media (max-width: 1200px) {
+    .container {
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(3, 150px);
+        /* Slightly smaller rows */
+    }
+}
+
+@media (max-width: 800px) {
+    .container {
+        grid-template-columns: 1fr;
+        /* Stack boxes vertically */
+        grid-template-rows: auto;
+        /* Allow auto height for boxes */
+    }
+
+    .box {
+        width: 100%;
+        /* Full width for boxes */
+        height: auto;
+        /* Auto height to maintain aspect ratio */
+        font-size: 1.2em;
+        /* Keep font size manageable */
+        margin-bottom: 10px;
+        /* Space between boxes */
+        padding: 10px;
+    }
+
+    .box:last-child {
+        margin-bottom: 0;
+        /* No margin on the last box */
+    }
+}
+
+@media (max-width: 500px) {
+    .box {
+        font-size: 1.2em;
+        /* Adjust font size for small screens */
+    }
+
+    .vid {
+        font-size: 1.5em;
+        /* Keep video font size manageable */
+    }
 }
